@@ -1,0 +1,5 @@
+pytest
+pytest-bdd
+playwright
+python-dotenv
+pytest-env

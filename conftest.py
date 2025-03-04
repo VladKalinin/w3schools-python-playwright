@@ -14,9 +14,11 @@ else:
 
 expect.set_options(timeout=5_000)
 
+
 @pytest.fixture(scope="session")
 def base_url():
     return os.getenv("BASE_URL")
+
 
 @pytest.fixture(scope="function")
 def browser():
@@ -24,6 +26,7 @@ def browser():
         browser = p.chromium.launch(headless=False)
         yield browser
         browser.close()
+
 
 @pytest.fixture(scope="function")
 def page(browser, base_url):

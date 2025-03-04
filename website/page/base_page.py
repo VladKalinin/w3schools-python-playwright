@@ -1,11 +1,11 @@
 from abc import ABC, abstractmethod
+from playwright.sync_api import Page
 
-from website.base_component import BaseComponent
 
-class BasePage(BaseComponent):
+class BasePage(ABC):
 
-    def __init__(self, page, base_url):
-        super().__init__(page)
+    def __init__(self, page: Page, base_url):
+        self.page = page
         self.base_url = base_url
 
     def open_page(self, path: str):
